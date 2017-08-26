@@ -18,7 +18,10 @@
  */
 package org.apache.flume.channel;
 
-import com.google.common.base.Preconditions;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.flume.ChannelException;
 import org.apache.flume.ChannelFullException;
 import org.apache.flume.Context;
@@ -27,13 +30,11 @@ import org.apache.flume.annotations.InterfaceAudience;
 import org.apache.flume.annotations.InterfaceStability;
 import org.apache.flume.annotations.Recyclable;
 import org.apache.flume.instrumentation.ChannelCounter;
+import org.apache.http.annotation.GuardedBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.concurrent.GuardedBy;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
+import com.google.common.base.Preconditions;
 
 /**
  * <p>

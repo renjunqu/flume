@@ -22,7 +22,8 @@ limitations under the License.
     <artifactId>flume-ng-sinks</artifactId>
     <groupId>org.apache.flume</groupId>
     <version>1.7.0</version>
-  </parent>
+    <relativePath>../pom.xml</relativePath>
+  </parent> 
 
   <groupId>org.apache.flume.flume-ng-sinks</groupId>
   <artifactId>flume-ng-morphline-solr-sink</artifactId>
@@ -43,7 +44,12 @@ limitations under the License.
       <groupId>org.apache.flume</groupId>
       <artifactId>flume-ng-core</artifactId>
     </dependency>
-
+    
+    <dependency>
+		    <groupId>ua_parser</groupId>
+		    <artifactId>ua-parser</artifactId>
+	</dependency>
+ 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
